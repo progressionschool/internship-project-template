@@ -22,42 +22,111 @@ This template includes a FastAPI backend with Google Gemini LLM integration and 
     └── tailwind.config.js
 ```
 
+## Getting Started
+
+### Clone the Repository
+
+First, you need to clone this repository to your local machine. This will download all the project files to your computer.
+
+**Repository URL:** https://github.com/progressionschool/internship-project-template
+
+**On Windows:**
+
+1. Open **Git Bash** (if you have Git installed) or **Command Prompt**
+2. Navigate to the directory where you want to save the project:
+   ```bash
+   cd C:\Users\YourName\Desktop
+   ```
+   (Replace `YourName` with your actual username)
+3. Clone the repository:
+   ```bash
+   git clone https://github.com/progressionschool/internship-project-template.git
+   ```
+4. Navigate into the project directory:
+   ```bash
+   cd internship-project-template
+   ```
+
+**On macOS:**
+
+1. Open **Terminal** (you can find it in Applications > Utilities)
+2. Navigate to the directory where you want to save the project:
+   ```bash
+   cd ~/Desktop
+   ```
+   (Or any other directory you prefer)
+3. Clone the repository:
+   ```bash
+   git clone https://github.com/progressionschool/internship-project-template.git
+   ```
+4. Navigate into the project directory:
+   ```bash
+   cd internship-project-template
+   ```
+
+**Note:** Make sure you have Git installed on your system. If you don't have Git installed, download it from [git-scm.com](https://git-scm.com/downloads).
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
 - **Python 3.12+** - [Download Python](https://www.python.org/downloads/)
+- **UV Package Manager** - Fast Python package installer (see installation below)
 - **Node.js 18+** - [Download Node.js](https://nodejs.org/)
 - **npm** (comes with Node.js) or **yarn**
 - **Google API Key** - Get one from [Google AI Studio](https://makersuite.google.com/app/apikey)
 
 ## Backend Setup
 
-### 1. Navigate to Backend Directory
+### 1. Install UV Package Manager
+
+Install UV using pip:
+
+```bash
+pip install uv
+```
+
+For alternative installation methods, see the [UV documentation](https://github.com/astral-sh/uv).
+
+### 2. Navigate to Backend Directory
 
 ```bash
 cd Backend
 ```
 
-### 2. Create a Virtual Environment (Recommended)
+### 3. Create Virtual Environment
+
+Create a virtual environment using UV:
 
 ```bash
-# On macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
-
-# On Windows
-python -m venv venv
-venv\Scripts\activate
+uv venv
 ```
 
-### 3. Install Dependencies
+This will create a `.venv` folder in the Backend directory.
+
+### 4. Activate Virtual Environment
+
+Activate the virtual environment:
+
+**On Windows:**
+```bash
+.venv\Scripts\activate
+```
+
+**On macOS/Linux:**
+```bash
+source .venv/bin/activate
+```
+
+### 5. Install Dependencies
+
+Install all packages from `requirements.txt`:
 
 ```bash
-pip install -r requirements.txt
+uv add -r requirements.txt
 ```
 
-### 4. Create Environment File
+### 6. Create Environment File
 
 Create a `.env` file in the `Backend` directory:
 
@@ -77,7 +146,7 @@ GOOGLE_API_KEY=your_api_key_here
 
 Replace `your_api_key_here` with your actual Google API key from [Google AI Studio](https://makersuite.google.com/app/apikey).
 
-### 5. Run the Backend Server
+### 7. Run the Backend Server
 
 ```bash
 uvicorn main:app --reload

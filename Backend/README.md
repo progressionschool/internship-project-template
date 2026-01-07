@@ -4,19 +4,43 @@ FastAPI backend with Google Gemini LLM integration.
 
 ## Quick Start
 
-1. Install dependencies:
+1. Install UV (if not already installed):
 
    ```bash
-   pip install -r requirements.txt
+   pip install uv
    ```
 
-2. Create a `.env` file with your Google API key:
+2. Create virtual environment:
+
+   ```bash
+   uv venv
+   ```
+
+3. Activate virtual environment:
+
+   **On Windows:**
+   ```bash
+   .venv\Scripts\activate
+   ```
+
+   **On macOS/Linux:**
+   ```bash
+   source .venv/bin/activate
+   ```
+
+4. Install dependencies:
+
+   ```bash
+   uv add -r requirements.txt
+   ```
+
+5. Create a `.env` file with your Google API key:
 
    ```
    GOOGLE_API_KEY=your_api_key_here
    ```
 
-3. Run the server:
+6. Run the server:
    ```bash
    uvicorn main:app --reload
    ```
