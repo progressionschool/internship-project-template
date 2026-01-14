@@ -6,20 +6,34 @@ This template includes a FastAPI backend with Google Gemini LLM integration and 
 
 ```
 .
-├── Backend/          # FastAPI backend application
-│   ├── main.py       # Main backend server file
-│   ├── requirements.txt
-│   └── .env          # Environment variables (create this file)
+├── Backend/                    # FastAPI backend application
+│   ├── main.py                 # Main backend server file
+│   ├── pyproject.toml          # Python project configuration
+│   ├── requirements.txt        # Python dependencies
+│   ├── uv.lock                 # UV lock file for dependency versions
+│   ├── README.md               # Backend-specific documentation
+│   └── .env                    # Environment variables (create this file)
 │
-└── Frontend/         # React frontend application
+└── Frontend/                   # React frontend application
+    ├── public/
+    │   └── vite.svg            # Vite logo
     ├── src/
     │   ├── components/
     │   │   └── QuoteGenerator.jsx  # Quote generator component
-    │   ├── App.jsx   # Main app component (layout wrapper)
-    │   ├── main.jsx  # React entry point
-    │   └── index.css # Global styles with Tailwind
-    ├── package.json
-    └── tailwind.config.js
+    │   ├── assets/
+    │   │   └── react.svg       # React logo
+    │   ├── App.jsx             # Main app component (layout wrapper)
+    │   ├── App.css             # App-specific styles
+    │   ├── main.jsx            # React entry point
+    │   └── index.css           # Global styles with Tailwind
+    ├── eslint.config.js        # ESLint configuration
+    ├── index.html              # HTML entry point
+    ├── package.json            # Node.js dependencies and scripts
+    ├── package-lock.json       # npm lock file
+    ├── postcss.config.js       # PostCSS configuration
+    ├── tailwind.config.js      # Tailwind CSS configuration
+    ├── vite.config.js          # Vite build tool configuration
+    └── README.md               # Frontend-specific documentation
 ```
 
 ## Getting Started
